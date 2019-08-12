@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+      <h1 class="text-center">Cadastro</h1>
+      <form name="cadastro" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <input type="text" class="form-control mt-3"  id="nome" name="nome" placeholder="Nome" [(ngModel)]="form.name" #nome="ngModel" required aria-label="nome">
+        <div *ngIf="f.submitted && nome.invalid">
+          <div class="error" *ngIf="nome.errors.required">O campo nome é obrigatório</div>
+        </div>
+        <input type="text" class="form-control mt-3" id="username" name="username" placeholder="Apelido" [(ngModel)]="form.username" #username="ngModel" required aria-label="Apelido">
+        <div *ngIf="f.submitted && username.invalid">
+          <div class="error" *ngIf="username.errors.required">O campo usuário é obrigatório</div>
+        </div>
+        <input type="email" class="form-control mt-3" id="email" name="email"  placeholder="E-mail" [(ngModel)]="form.email" #email="ngModel" required email aria-label="e-mail">
+        <div *ngIf="f.submitted && email.invalid">
+          <div class="error" *ngIf="email.errors.required">O campo e-mail é obrigatório</div>
+          <div class="error" *ngIf="email.errors.email">Por favor, preencha com um e-mail válido</div>
+        </div>
+
+        <input type="password" class="form-control mt-3" id="password" name="password"  placeholder="Senha" aria-label="senha" [(ngModel)]="form.password" #password="ngModel" required minlength="8">
+        <div *ngIf="f.submitted && password.invalid">
+          <div class="error" *ngIf="password.errors.required">Por favor, preencha o campo senha</div>
+          <div class="error" *ngIf="password.errors.minlength">O campo senha deve ter mais que 8 caracteres</div>
+        </div>
+        <button type="submit" class="btn btn-success form-control mt-3" data-toggle="modal">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</div>

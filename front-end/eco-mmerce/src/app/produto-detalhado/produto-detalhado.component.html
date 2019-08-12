@@ -1,0 +1,26 @@
+<section *ngIf="produto">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <h3>{{produto.nome}}</h3>
+        <img src="{{produto.imagem}}" class="img-fluid" alt="Imagem responsiva">
+        <p>{{produto.descricao}}</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top: 250px;">
+        <div class="card border-secondary mb-3" style="max-width: 20rem;">
+          <h3>{{produto.preco}}</h3>
+          <div class="card-header">Finalize sua compra</div>
+          <div class="card-body text-secondary">
+            <h5 class="card-title">Título de Card Secondary</h5>
+            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer
+              preencher o conteúdo do card.
+            </p>
+            <button type="button" class="btn btn-success" aria-label="comprar">
+              <a href="#">Comprar</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
